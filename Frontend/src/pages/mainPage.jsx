@@ -110,7 +110,11 @@ const MainPage = ({ onStartClick }) => {
     };
 
     const handleNextQuestion = () => {
-        setCurrentQuestionIndex(currentQuestionIndex + 1);
+        if(currentQuestionIndex < questions.length - 1){
+
+            setCurrentQuestionIndex(currentQuestionIndex + 1);
+        }
+        
         if (currentQuestionIndex < questions.length ) {
 
             // 根據選擇的選項分數更新分數
@@ -128,13 +132,16 @@ const MainPage = ({ onStartClick }) => {
 
 
                 setPersonalityScores(updatedScores);
-                console.log(updatedScores);
+                console.log(personalityScores);
             }
-            if (currentQuestionIndex < questions.length - 1) {
-                setCurrentQuestionIndex(currentQuestionIndex + 1);
-            } else {
+            
+            }
+        if (currentQuestionIndex === questions.length - 1){
                 // 计算总分
                 const { R, S, T } = personalityScores;
+                console.log(R);
+                console.log(S);
+                console.log(T);
     
                 switch (true) {
                     case R > 7 && S > 7 && T > 3:
@@ -161,9 +168,8 @@ const MainPage = ({ onStartClick }) => {
                     default:
                         resu = 6;
                         break;
-
-                }
-            }
+                    }
+                    console.log(resu);
         }
     };
 
