@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.button:hover {
+  border-color: #ccc; /* 滑鼠懸停時的邊框顏色 */
+  background-color: #f0f0f0; /* 滑鼠懸停時的背景顏色 */
+  cursor: pointer; /* 將滑鼠指針設置為手型 */
+}
