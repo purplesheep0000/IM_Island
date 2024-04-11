@@ -170,6 +170,7 @@ const MainPage = ({ onStartClick }) => {
                         break;
                     }
                     console.log(resu);
+                    navigate("/result");
         }
     };
 
