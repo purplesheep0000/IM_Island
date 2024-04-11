@@ -22,10 +22,13 @@ const User = sequelize.define('User', {
   result_time: {
     type: DataTypes.DATE,
     defaultValue: Sequelize.literal('CURRENT_TIMESTAMP')
+  },
+  timestamp: {
+    type: DataTypes.INTEGER // 修改为整数类型
   }
 }, {
   tableName: 'users_2',
-  timestamps: false
+  timestamps: true // 将 timestamps 设置为 true
 });
 
 // 创建表
@@ -34,7 +37,8 @@ sequelize.sync();
 // 定义路由
 app.post('/time', async (req, res) => {
   try {
-    const newUser = await User.create();
+    const currentTimeStamp = Math.floor(new Date().getTime() / 1000); // 获取当前时间的时间戳（以秒为单位）
+    const newUser = await User.create({ timestamp: currentTimeStamp }); // 创建用户时设置 timestamp 字段为当前时间戳
     res.json(newUser);
   } catch (error) {
     console.error('Error:', error);
