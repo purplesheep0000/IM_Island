@@ -8,8 +8,7 @@ from datetime import datetime
 app = FastAPI()
 
 # 创建引擎和会话
-engine = create_engine("postgresql://postgres:DpIXwQjiOwpcLlpgyofHZZvhzlAjbMRD@postgres-tfdx.railway.internal:5432/railway")
-
+engine = create_engine("postgresql://postgres:DpIXwQjiOwpcLlpgyofHZZvhzlAjbMRD@monorail.proxy.rlwy.net:22660/railway")
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # 创建基类
