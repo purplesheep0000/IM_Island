@@ -1,6 +1,6 @@
 import React from 'react';
 import background from "../asset/bg.jpg";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
 
@@ -40,7 +40,7 @@ const result_context = [
 ]
 
 const StartPage = ({ onStartClick }) => {
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
     const parameter = useSelector(state => state.result) ;
     console.log(parameter)
 
