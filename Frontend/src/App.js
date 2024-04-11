@@ -4,7 +4,6 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Provider } from 'react-redux';
 import store from './redux/store'; // 导入 Redux 存储
-import db from "./db"; // 正確的引入方式
 
 import MainPage from "./pages/mainPage";
 import StartPage from "./pages/startPage";
