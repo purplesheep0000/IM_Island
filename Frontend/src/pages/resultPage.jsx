@@ -2,6 +2,7 @@ import React from 'react';
 import background from "../asset/result_bg.jpg";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
+import {  useEffect } from 'react';
 
 
 const result_context = [
@@ -43,7 +44,23 @@ const StartPage = ({ onStartClick }) => {
     const navigate = useNavigate();
     const parameter = useSelector(state => state.result) ;
     console.log(parameter)
-
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await fetch("https://imisland-production.up.railway.app/time", {
+                method: 'POST', // 指定请求方法
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+              });
+            console.log(response.data);
+          } catch (error) {
+            console.error('Error fetching data: ', error);
+          }
+        };
+    
+        fetchData();
+      }, []);
     return (
         <div className="background-with-overlay" style={{ 
             backgroundImage: `url(${background})`,
