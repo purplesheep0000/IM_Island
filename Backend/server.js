@@ -28,7 +28,7 @@ const User = sequelize.define('User', {
   }
 }, {
   tableName: 'users_2',
-  timestamps: true // 将 timestamps 设置为 true
+  timestamps: false // 将 timestamps 设置为 true
 });
 
 // 创建表
