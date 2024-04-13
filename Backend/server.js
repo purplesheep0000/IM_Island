@@ -1,8 +1,10 @@
 const express = require('express');
 const { Sequelize, DataTypes } = require('sequelize');
 const { Op } = require('sequelize');
+const cors = require('cors'); // 引入 cors 中间件
 
 const app = express();
+app.use(cors()); // 使用 cors 中间件
 
 // 创建 Sequelize 实例
 const sequelize = new Sequelize('railway', 'postgres', 'DpIXwQjiOwpcLlpgyofHZZvhzlAjbMRD', {
