@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import background from "../asset/bg.jpg";
+import background from "../asset/main_bg.jpg";
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
@@ -29,7 +29,15 @@ const questions = [
         ]
     },
     {
-        question: '4.團隊中一個流傳好幾年的大型活動眼看要在你這一輩因為沒人要辦而被流掉了，你會...',
+        question: '4.烈日當頭，你在炎熱的下午經過一家飲料店，你會…',
+        options: [
+            'A.來一杯清爽降火的無糖青茶',
+            'B.點一杯甜蜜可口的珍珠奶茶',
+            'C.直接經過，還是喝水最好！'
+        ]
+    },
+    {
+        question: '5.團隊中一個流傳好幾年的大型活動眼看要在你這一輩因為沒人要辦而被流掉了，你會...',
         options: [
             'A.接下活動總召',
             'B.積極說服其他人來辦，並告訴他們自己可以協助',
@@ -37,7 +45,7 @@ const questions = [
         ]
     },
     {
-        question: '5.有一通陌生電話打來，用嚴肅的語氣說「出大事了！」，你會...',
+        question: '6.有一通陌生電話打來，用嚴肅的語氣說「出大事了！」，你會...',
         options: [
             'A.開始想像各種可能的出事情景',
             'B.冷靜尋問怎麼了',
@@ -45,7 +53,15 @@ const questions = [
         ]
     },
     {
-        question: '6.當你的朋友傳訊息告訴你我正在哭，你會...',
+        question: '7.今天你需要去拜訪一位喜歡喝茶的長輩，於是你決定帶茶葉拜訪，你會選擇…',
+        options: [
+            'A.甘醇鮮美的碧螺春綠茶',
+            'B.強烈豐厚略帶苦澀的普洱茶',
+            'C.圓順滑喉有明顯香氣的凍頂烏龍茶'
+        ]
+    },
+    {
+        question: '8.當你的朋友傳訊息告訴你我正在哭，你會...',
         options: [
             'A.跑過去抱他、安慰她',
             'B.打電話給他建議、解決問題',
@@ -53,7 +69,7 @@ const questions = [
         ]
     },
     {
-        question: '7.你在認真聽課或辦公，旁邊的朋友一直在聊天並且希望你加入一起聽，你會...',
+        question: '9.你在認真聽課或辦公，旁邊的朋友一直在聊天並且希望你加入一起聽，你會...',
         options: [
             'A.請他們專心做事，不要打擾其他人',
             'B.委婉的拒絕，告訴他自己在狀態中，不想分心',
@@ -61,7 +77,7 @@ const questions = [
         ]
     },
     {
-        question: '8.你遇見了傳說中的神燈精靈，他讓你在以下三個願望中選一個實現，你會選擇...',
+        question: '10.你遇見了傳說中的神燈精靈，他讓你在以下三個願望中選一個實現，你會選擇...',
         options: [
             'A.騎獨角獸在天上飛',
             'B.和喜歡的人兩情相悅在一起',
@@ -69,7 +85,7 @@ const questions = [
         ]
     },
     {
-        question: '9.當你發現朋友的朋友和你有許多共同喜好，並且為人和善，你會...',
+        question: '11.當你發現朋友的朋友和你有許多共同喜好，並且為人和善，你會...',
         options: [
             'A.直接和他本人見面聊天',
             'B.趁著朋友在的時候認識',
@@ -77,7 +93,15 @@ const questions = [
         ]
     },
     {
-        question: '10在不合理的地方被上司刁難，你會...',
+        question: '12.當提到喝茶，你會想到以下哪一種喝茶方式…',
+        options: [
+            'A.熱水沖泡享受每一沖不同香氣',
+            'B.冷泡清爽解暑帶有微微茶香',
+            'C.手搖杯甜蜜解渴有不同風味'
+        ]
+    },
+    {
+        question: '13.在不合理的地方被上司刁難，你會...',
         options: [
             'A.提出事實和理由，據理力爭',
             'B.保持沉默並尋求解決方案',
@@ -85,7 +109,6 @@ const questions = [
         ]
     }
 ];
-
 
 const MainPage = ({ onStartClick }) => {
     const navigate = useNavigate();
@@ -123,25 +146,20 @@ const MainPage = ({ onStartClick }) => {
                 const updatedScores = { ...personalityScores };
 
                 // 根據不同問題更新不同人格特質的分數
-                if (currentQuestionIndex === 1 || currentQuestionIndex === 3 || currentQuestionIndex === 5 || currentQuestionIndex === 8) {
+                if (currentQuestionIndex === 1 || currentQuestionIndex === 4 || currentQuestionIndex === 7 || currentQuestionIndex === 10) {
                     updatedScores.R += selectedOptionScore;
-                } else if (currentQuestionIndex === 0 || currentQuestionIndex === 2 || currentQuestionIndex === 6 || currentQuestionIndex === 9) {
+                } else if (currentQuestionIndex === 0 || currentQuestionIndex === 2 || currentQuestionIndex === 8 || currentQuestionIndex === 12) {
                     updatedScores.S += selectedOptionScore;
-                } else if (currentQuestionIndex === 4 || currentQuestionIndex === 7) {
+                } else if (currentQuestionIndex === 5 || currentQuestionIndex === 9) {
                     updatedScores.T += selectedOptionScore;
                 }
                 setPersonalityScores(updatedScores);
-                // console.log(updatedScores);
-                console.log(currentQuestionIndex, updatedScores)
             }
         
             }
         if (currentQuestionIndex === questions.length - 1){
                 // 计算总分
                 const { R, S, T } = personalityScores;
-                console.log(R);
-                console.log(S);
-                console.log(T);
     
                 switch (true) {
                     case R > 7 && S > 7 && T > 3:
@@ -175,21 +193,20 @@ const MainPage = ({ onStartClick }) => {
     };
 
     return (
-        <div className="h-screen w-screen bg-scroll bg-cover bg-center flex items-center justify-center" style={{ 
+        <div className="background-with-overlay" style={{ 
             backgroundImage: `url(${background})`,
           }}>
-            <div className='h-3/4 w-3/4 grid grid-row-3 grid-flow-row gap-4'>
-                <div className='flex justify-center items-center'>
-                    <div className='w-48'>{questions[currentQuestionIndex].question}</div> 
+            <div className="inner-content font-bold text-green-950 flex justify-center items-center">
+                <div className="w-6/7 h-24 border-white rounded-lg p-4 divide-y-2 border-2 font-bold text-sm flex flex-col items-center justify-center">
+                    {questions[currentQuestionIndex].question}
                 </div>
-                <div className='row-span-2 flex flex-col items-center justify-center'>
+                <div className='row-span-2 w-6/7 flex flex-col items-center justify-center'>
                 {questions[currentQuestionIndex].options.map((option, index) => (
-                    <button key={index} className='w-48 h-1/6 my-2 rounded-lg border-2' onClick={() => handleOptionClick(index)}>{option}</button>
+                    <button key={index} className='font-bold text-sm w-full h-1/6 my-2 rounded-lg border-2' onClick={() => handleOptionClick(index)}>{option}</button>
                 ))}
-                   {/* <button onClick={handleNextQuestion}>下一題</button> */}
                 </div>
             </div>
-        </div>
+            </div>
     );
 };
 

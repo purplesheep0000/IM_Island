@@ -38,35 +38,37 @@ const result_context = [
     "person": "具有天然的魅力和氣質，不經過修飾也能散發出獨特的魅力，讓人心生敬畏，經過時間的沉澱而變得更加迷人，具有悠然自得的態度，不急不躁，懂得等待和享受生活中的美好。"},
 ]
 
-const ResultPage = ({ onStartClick }) => {
+const StartPage = ({ onStartClick }) => {
     const parameter = useSelector(state => state.result) ;
 
     return (
-        <div className="h-screen w-screen bg-cover bg-center flex items-center justify-center" style={{ 
+        <div className="background-with-overlay" style={{ 
             backgroundImage: `url(${background})`,
           }}>
-            <div className='h-3/4 w-3/4 grid grid-row-3 grid-flow-row gap-4'>
-                <div className='row-span-1 flex flex-col justify-center items-center gap-2'>
-                    <div className='w-40 flex justify-center items-center'>{result_context[parameter].title}</div> 
-                    <div className='w-24 flex justify-center items-center'>{result_context[parameter].type}</div> 
-                </div>
-                <div className='row-span-2 flex flex-col items-center justify-center gap-4 overflow-y-scroll'>
-                    <div className='text-sm'>
-                        <span> 茶種介紹 </span>
-                        <div>
+            <div className="inner-content font-bold text-green-950 flex justify-center items-center">
+           <div className=' w-6/7 h-full grid grid-row-3 grid-flow-row gap-8'>
+                 <div className='row-span-1 flex flex-col justify-center items-center gap-2'>
+                     <div className='w-full flex justify-center items-center'>{result_context[parameter].title}</div> 
+                     <div className='w-full flex justify-center items-center'>{result_context[parameter].type}</div> 
+                 </div>
+                 <div className='row-span-2 flex flex-col items-center justify-center gap-4 overflow-y-scroll'>
+                     <div className='text-sm'>
+                         <span> 茶種介紹 </span>
+                         <div>
                             {result_context[parameter].intro}
-                        </div>
-                    </div>
+                         </div>
+                     </div>
                     <div className='text-sm'>
                         <span> 性格特徵 </span>
-                        <div>
-                            {result_context[parameter].person}
-                        </div>
-                    </div>
-                </div>
+                         <div>
+                             {result_context[parameter].person}
+                         </div>
+                     </div>
+                 </div>
+             </div>
             </div>
-        </div>
+            </div>
     );
 };
 
-export default ResultPage;
+export default StartPage;
