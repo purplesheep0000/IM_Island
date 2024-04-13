@@ -1,8 +1,6 @@
 import React from 'react';
 import background from "../asset/result_bg.jpg";
-import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
-import {  useEffect } from 'react';
 
 
 const result_context = [
@@ -40,27 +38,9 @@ const result_context = [
     "person": "具有天然的魅力和氣質，不經過修飾也能散發出獨特的魅力，讓人心生敬畏，經過時間的沉澱而變得更加迷人，具有悠然自得的態度，不急不躁，懂得等待和享受生活中的美好。"},
 ]
 
-const StartPage = ({ onStartClick }) => {
-    const navigate = useNavigate();
+const ResultPage = ({ onStartClick }) => {
     const parameter = useSelector(state => state.result) ;
-    console.log(parameter)
-    useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const response = await fetch("https://imisland-production.up.railway.app/time", {
-                method: 'POST', // 指定请求方法
-                headers: {
-                  'Content-Type': 'application/json'
-                },
-              });
-            console.log(response.data);
-          } catch (error) {
-            console.error('Error fetching data: ', error);
-          }
-        };
-    
-        fetchData();
-      }, []);
+
     return (
         <div className="background-with-overlay" style={{ 
             backgroundImage: `url(${background})`,
@@ -91,4 +71,4 @@ const StartPage = ({ onStartClick }) => {
     );
 };
 
-export default StartPage;
+export default ResultPage;

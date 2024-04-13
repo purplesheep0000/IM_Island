@@ -110,7 +110,6 @@ const questions = [
     }
 ];
 
-const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 const MainPage = ({ onStartClick }) => {
     const navigate = useNavigate();
