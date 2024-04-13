@@ -46,21 +46,20 @@ const StartPage = ({ onStartClick }) => {
             backgroundImage: `url(${background})`,
           }}>
             <div className="inner-content font-bold text-green-950 flex justify-center items-center">
-           <div className=' w-6/7 h-full grid grid-row-3 grid-flow-row gap-8'>
-                 <div className='row-span-1 flex flex-col justify-center items-center gap-2'>
-                     <div className='w-full flex justify-center items-center'>{result_context[parameter].title}</div> 
-                     <div className='w-full flex justify-center items-center'>{result_context[parameter].type}</div> 
+           <div className='w-6/7 h-full grid grid-row-3 grid-flow-row gap-8 px-4'>
+                 <div className='row-span-1 flex flex-col justify-center items-center gap-2 pt-8 pb-2'>
+                     <div className='w-full flex justify-center items-center font-bold text-base'>{result_context[parameter].title}</div> 
                  </div>
-                 <div className='row-span-2 flex flex-col items-center justify-center gap-4 overflow-y-scroll'>
-                     <div className='text-sm'>
-                         <span> 茶種介紹 </span>
-                         <div>
+                 <div className='result-with-overlay row-span-2 flex flex-col items-center justify-center gap-4 overflow-y-scroll'>
+                     <div className='text-sm h-2/3 divide-y-2 divide-amber-100'>
+                         <div className=''> 茶種介紹 </div>
+                         <div className='text-xs py-1 '>
                             {result_context[parameter].intro}
                          </div>
                      </div>
-                    <div className='text-sm'>
-                        <span> 性格特徵 </span>
-                         <div>
+                    <div className='text-sm h-1/3 divide-y-2 divide-amber-100'>
+                        <div className=''> 性格特徵 </div>
+                         <div className='text-xs py-1'>
                              {result_context[parameter].person}
                          </div>
                      </div>

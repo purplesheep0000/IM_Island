@@ -49,3 +49,27 @@ code {
   grid-template-rows: 1fr 2fr;
   gap: 16px;
 }
+
+.with-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(256, 256, 256, 0.3);
+  z-index: 1;
+  border-radius: 25px;
+}
+
+.result-with-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(256, 256, 256, 0.2);
+  z-index: 1;
+  border-radius: 25px;
+}

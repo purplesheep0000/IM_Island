@@ -5,11 +5,11 @@ import { useDispatch } from 'react-redux';
 
 const questions = [
     { 
-        question: '1.在早上上班時，你成功趕上了電梯，當你暗自慶幸錯過這班可能就會遲到時，此時遠處有一個人跑來也想搭乘，你會...', 
+        question: '1.在早上上班時，你成功趕上了電梯，當你正慶幸不會遲到時，此時遠處有一個人跑來也想搭乘，你會...', 
         options: [
             'A.假裝沒看到按關門',
             'B.一邊道歉一邊按關門',
-            'C.幫她按開門'
+            'C.幫他按開門'
         ] 
     },
     {
@@ -24,7 +24,7 @@ const questions = [
         question: '3.有人跟你借了東西，但你在三天後也需要用到這個東西，你會...',
         options: [
             'A.直接拒絕，告訴他自己也要用',
-            'B.拒絕但幫她介紹給其他可能可以借的人',
+            'B.拒絕但幫他介紹給其他可能可以借的人',
             'C.直接借給他，叮囑他明天一定要還'
         ]
     },
@@ -37,7 +37,7 @@ const questions = [
         ]
     },
     {
-        question: '5.團隊中一個流傳好幾年的大型活動眼看要在你這一輩因為沒人要辦而被流掉了，你會...',
+        question: '5.團隊中一個流傳好幾年的大型活動眼看要在你這一輩因為沒人要辦而流掉了，你會...',
         options: [
             'A.接下活動總召',
             'B.積極說服其他人來辦，並告訴他們自己可以協助',
@@ -61,9 +61,9 @@ const questions = [
         ]
     },
     {
-        question: '8.當你的朋友傳訊息告訴你我正在哭，你會...',
+        question: '8.當你的朋友傳訊息告訴你他正在哭，你會...',
         options: [
-            'A.跑過去抱他、安慰她',
+            'A.跑過去抱他、安慰他',
             'B.打電話給他建議、解決問題',
             'C.告訴他有點忙，先把事情傳給我晚點看'
         ]
@@ -196,13 +196,13 @@ const MainPage = ({ onStartClick }) => {
         <div className="background-with-overlay" style={{ 
             backgroundImage: `url(${background})`,
           }}>
-            <div className="inner-content font-bold text-green-950 flex justify-center items-center">
-                <div className="w-6/7 h-24 border-white rounded-lg p-4 divide-y-2 border-2 font-bold text-sm flex flex-col items-center justify-center">
+            <div className=" inner-content font-bold text-green-950 flex justify-center items-center">
+                <div className="mx-2 w-6/7 h-24 border-white rounded-lg p-4 divide-y-2 divide-amber-100 border-2 font-bold text-sm flex flex-col items-center justify-center">
                     {questions[currentQuestionIndex].question}
                 </div>
-                <div className='row-span-2 w-6/7 flex flex-col items-center justify-center'>
+                <div className='with-overlay mx-2 row-span-2 w-6/7 flex flex-col items-center justify-center'>
                 {questions[currentQuestionIndex].options.map((option, index) => (
-                    <button key={index} className='font-bold text-sm w-full h-1/6 my-2 rounded-lg border-2' onClick={() => handleOptionClick(index)}>{option}</button>
+                    <button key={index} className='z-10 border-white font-bold text-sm w-full h-1/6 my-2 rounded-lg border-2 py-4' onClick={() => handleOptionClick(index)}>{option}</button>
                 ))}
                 </div>
             </div>
