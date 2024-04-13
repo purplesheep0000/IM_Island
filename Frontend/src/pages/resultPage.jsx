@@ -1,6 +1,5 @@
 import React from 'react';
-import background from "../asset/bg.jpg";
-//import { useNavigate } from "react-router-dom";
+import background from "../asset/result_bg.jpg";
 import { useSelector } from 'react-redux';
 
 
@@ -39,10 +38,8 @@ const result_context = [
     "person": "具有天然的魅力和氣質，不經過修飾也能散發出獨特的魅力，讓人心生敬畏，經過時間的沉澱而變得更加迷人，具有悠然自得的態度，不急不躁，懂得等待和享受生活中的美好。"},
 ]
 
-const StartPage = ({ onStartClick }) => {
-    //const navigate = useNavigate();
+const ResultPage = ({ onStartClick }) => {
     const parameter = useSelector(state => state.result) ;
-    console.log(parameter)
 
     return (
         <div className="h-screen w-screen bg-cover bg-center flex items-center justify-center" style={{ 
@@ -72,4 +69,4 @@ const StartPage = ({ onStartClick }) => {
     );
 };
 
-export default StartPage;
+export default ResultPage;

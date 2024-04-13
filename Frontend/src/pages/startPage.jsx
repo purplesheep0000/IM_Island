@@ -1,13 +1,23 @@
 import background from "../asset/bg.jpg";
 import { useNavigate } from "react-router-dom";
 import React from 'react';
-// 獲取所有 timestamps 記錄
 
 
 const StartPage = ({ onStartClick }) => {
-    const navigate = useNavigate();
+    const navigate = useNavigate();    
 
-    const startGame = () => {
+    const startGame = async() => {
+        try {
+            const response = await fetch("https://imisland-production.up.railway.app/time", {
+                method: 'POST', // 指定请求方法
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+              });
+            console.log(response.data);
+          } catch (error) {
+            console.error('Error fetching data: ', error);
+          }
         navigate("/main");
     }
 
