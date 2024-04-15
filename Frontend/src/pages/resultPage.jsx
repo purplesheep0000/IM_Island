@@ -42,7 +42,7 @@ const result_context = [
 
 const StartPage = ({ onStartClick }) => {
     const parameter = useSelector(state => state.result) ;
-    const imageName = `result_${parameter}.png`;
+
     return (
         <div className="background-with-overlay" style={{ 
             backgroundImage: `url(${background})`,
