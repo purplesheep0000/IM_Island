@@ -1,6 +1,7 @@
 import React from 'react';
 import background from "../asset/result_bg.png";
 import { useSelector } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 
 
 const result_context = [
@@ -42,36 +43,46 @@ const result_context = [
 
 const StartPage = ({ onStartClick }) => {
     const parameter = useSelector(state => state.result) ;
+    const navigate = useNavigate();
+
+    const replay = async() => {
+        navigate("/");
+    }
 
     return (
-        <div className="background-with-overlay" style={{ 
+        <div className="background-with-overlay flex flex-col" style={{ 
             backgroundImage: `url(${background})`,
           }}>
-            <div className="inner-content font-bold text-green-950 flex justify-center items-center">
-           <div className='w-6/7 h-full grid grid-row-3 grid-flow-row gap-8 px-4'>
-                 <div className='row-span-1 flex flex-col justify-center items-center gap-2 pt-8 pb-2'>
-                     <div className='w-full flex justify-center items-center font-bold text-base'>{result_context[parameter].title}</div> 
-                 </div>
-                 <div className='h-full result-with-overlay row-span-2 flex flex-col items-center justify-center gap-4 '>
-                     <div className='text-sm divide-y-2 h-2/3 divide-amber-100'>
-                         <div className=''> 茶種介紹 </div>
-                         <div className='text-xs py-1 '>
-                            {result_context[parameter].intro}
-                         </div>
-                     </div>
-                    <div className='text-sm divide-y-2 h-1/3 divide-amber-100'>
-                        <div className=''> 性格特質 </div>
-                         <div className='text-xs py-1'>
-                             {result_context[parameter].person}
-                         </div>
-                     </div>
-                        <div className='w-20 h-24 absolute right-4 bottom-4'>
-                            <img src={`results/result_${parameter}.png`} alt='I am B' />
+            <div className="result-with-overlay inner-content font-bold text-green-950 flex justify-center items-center">
+                <div className='w-6/7 h-full grid grid-row-3 grid-flow-row gap-2 px-4'>
+                        <div className='row-span-1 flex flex-col justify-center items-center gap-1 pt-8'>
+                            <div className='w-full flex justify-center items-center font-bold text-base'>{result_context[parameter].title}</div> 
                         </div>
-                 </div>
-             </div>
+                        <div className='h-52  row-span-2 flex items-center justify-center gap-4'>
+                            <div className='w-1/2'>
+                                <img src={`results/result_${parameter}.png`} />
+                            </div>
+                            <div className='w-1/2 text-sm divide-y-2 divide-amber-100'>
+                                <div className='text-base'> 性格特質 </div>
+                                <div className='text-xs py-1'> 
+                                    {result_context[parameter].person}
+                                </div>
+                            </div>
+                            </div>
+                            <div className='w-full divide-y-2 divide-amber-100 '>
+                            <div className='text-sm divide-y-2 divide-amber-100'>
+                                <div className='text-base'> 茶種介紹 </div>
+                                    <div className='text-xs py-1 '>
+                                        {result_context[parameter].intro}
+                                    </div>
+                                </div>                 
+                            </div>
+                </div>
             </div>
-            </div>
+            <div className='divide-y-2 divide-amber-100 text-green-950 z-10 font-bold pt-2 opacity-75'>
+                    <button onClick={() => replay()}>再測一次！</button>
+                </div>
+        </div>
     );
 };
 
