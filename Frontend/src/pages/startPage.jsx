@@ -33,7 +33,7 @@ const StartPage = ({ onStartClick }) => {
                     </div>
                 </div>
                 <div className='mx-2  w-6/7 flex flex-col items-center justify-center '>
-                <button onClick={() => startGame()} className='z-10 py-4 w-full text-sm h-1/6 my-2 rounded-lg border-2 border-white'>快來試試茶葉人格測驗看自己是哪種茶!</button>
+                <button onClick={() => startGame()} className='z-10 py-4 w-full text-sm h-1/6 my-2 rounded-lg border-2 border-white'>快來試試茶葉人格測驗看自己是哪種茶！</button>
                 </div>
             </div>
             </div>
