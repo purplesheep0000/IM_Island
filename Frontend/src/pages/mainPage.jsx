@@ -187,7 +187,7 @@ const MainPage = ({ onStartClick }) => {
                         resu = 6;
                         break;
                     }
-                    dispatch({ type: 'SET_PARAMETER', payload: resu });
+                    dispatch({ type: 'SET_PARAMETER', payload: resu-1 });
                     navigate("/result");
         }
     };
