@@ -60,7 +60,7 @@ const StartPage = ({ onStartClick }) => {
                         </div>
                         <div className='h-52  row-span-2 flex items-center justify-center gap-4'>
                             <div className='w-1/2'>
-                                <img src={`results/result_${parameter}.png`} />
+                                <img src={`results/result_${parameter}.png`} alt='result'/>
                             </div>
                             <div className='w-1/2 text-sm divide-y-2 divide-amber-100'>
                                 <div className='text-base'> 性格特質 </div>
