@@ -1,5 +1,5 @@
 import React from 'react';
-import background from "../asset/result_bg.jpg";
+import background from "../asset/result_bg.png";
 import { useSelector } from 'react-redux';
 
 
@@ -22,25 +22,27 @@ const result_context = [
     "person": "深沉穩重，散發的神祕、獨特氣息讓人覺得難以捉摸，認識後會發現他意外的貼心且會照顧人。"},
     {"title": "東方美人茶（青茶）",
     "type": "XYT",
-    "intro": "東方美人的製茶程式精細繁瑣。 因為採細嫩的心芽製成，所以茶湯富含豐富的胺基酸，滋味甘甜爽口，茶湯不苦不澀， 茶樹嫩芽經茶小綠葉蟬吸食，茶菁因異常代謝生成特殊物質而產生天然蜜香味，東方美人茶的茶葉形態勻整，色澤翠綠，葉片完整，展開後色澤鮮豔，造型美觀。",
-    "person": "在嚴厲家教下長成的公主，永遠以最好的姿態待人且為人處事真誠有禮"},
-    {"title": "台茶18號紅玉紅茶（紅茶",
+    "intro": "東方美人茶的茶葉形態勻整，色澤翠綠，葉片完整，展開後色澤鮮豔，造型美觀。茶湯顏色會依照烘培程度不一，而程現深淺不同的色澤，無法憑色澤判斷是否為東方美人茶，而是要看茶葉本身是否有小綠蟬食用的過程。東方美人的製茶程式精細繁瑣。 因為採細嫩的心芽製成，所以茶湯富含豐富的胺基酸，滋味甘甜爽口，茶湯不苦不澀， 茶樹嫩芽經茶小綠葉蟬吸食，茶菁因異常代謝生成特殊物質而產生天然蜜香味。",
+    "person": "永遠以最好的姿態待人且為人處事真誠，彬彬有禮，是大家心目中的模範生。"},
+    {"title": "台茶18號紅玉紅茶（紅茶）",
     "type": "XYZ",
-    "intro": "散發出淡淡之薄荷加肉桂香，滋味醇厚，茶湯口感收斂性強，入喉具強烈收縮感，會有些微澀的感覺，喝起來無甜分，此乃茶多酚含量高，經全發酵後，轉化成茶黃質及茶紅質，有豐富內涵之呈現。此種迷人之香氣及滋味，即源自於原生種台灣山茶，是極為獨特之品種。",
-    "person": "強烈且獨特有個性，初見時會覺得難以親近，卻讓人忍不住想  更加了解"},
+    "intro": "日月潭紅茶是以手工採一心二葉大葉種茶葉（茶菁），製成條型茶（茶乾），以便和高山茶的球型茶區別開。茶湯水色艷紅上層戴著黃金環，熱泡茶色茶味釋放快速，需謹慎浸泡時間並掌握出湯快速。散發出淡淡之薄荷加肉桂香，滋味醇厚，茶湯口感收斂性強，入喉具強烈收縮感，會有些微澀的感覺，喝起來無甜分，此乃茶多酚含量高，經全發酵後，轉化成茶黃質及茶紅質，有豐富內涵之呈現。此種迷人之香氣及滋味，即源自於原生種台灣山茶，是極為獨特之品種。",
+    "person": "強烈且獨特有個性，初見時會覺得難以親近，卻讓人忍不住想更加了解。"},
     {"title": "台茶8號阿薩姆紅茶（紅茶）",
     "type": "RST",
-    "intro": "茶湯偏紅、亮澤，沖泡時香氣撲鼻，味道濃郁富有甘醇香氣，濃稠、濃烈、有麥芽香或蔗糖香，口感略帶澀味，茶香濃郁活潑的茶韻基底調性使其極適合拿來當奶茶飲用。",
-    "person": "是派對的中心，亮眼且活潑的個性與所有人都處的來，不論是外國人或老人小孩都是他的朋友"},
+    "intro": "以一芯二葉大葉種茶葉（茶菁），製成條型茶（茶乾），以便和高山茶的球型茶區別開。茶湯偏深紅褐色，色澤與味道皆濃，沖泡時香氣撲鼻，味道濃郁富有甘醇香氣，濃稠、濃烈、有麥芽香或蔗糖香，口感澀味較重，茶香濃郁活潑的茶韻基底調性使其極適合拿來當奶茶飲用。",
+    "person": "是派對的中心，具有亮眼且活潑的個性。與所有人都處的來，不論是外國人或老人小孩都是他的朋友。"},
     {"title": "普洱茶（黑茶）",
     "type": "XSZ",
-    "intro": "普洱茶因制程特殊而具備後發酵的能力，生茶品風味天然、氣強，較苦澀而喉韻明顯，陳放可使苦澀降低並產生迷人的陳韻，優質陳茶香氣融合，湯滑水甜，茶質口感豐厚具包覆感，使品飲者深度感受其韻味，即為普洱特有的茶韻。",
+    "intro": "茶色烏黑，通常熟茶茶湯較紅、生茶一開始較淡、明亮，放久後茶湯會逐年轉濃。茶葉分為散茶及壓緊茶，散茶呈現散狀，更好沖泡，壓緊茶為茶磚，因古時有驢子更好運送而流傳至今。普洱茶因制程特殊而具備後發酵的能力，生茶品風味天然、氣強，較苦澀而喉韻明顯，陳放可使苦澀降低並產生迷人的陳韻，優質陳茶香氣融合，湯滑水甜，茶質口感豐厚具包覆感，使品飲者深度感受其韻味，即為普洱特有的茶韻。",
     "person": "具有天然的魅力和氣質，不經過修飾也能散發出獨特的魅力，讓人心生敬畏，經過時間的沉澱而變得更加迷人，具有悠然自得的態度，不急不躁，懂得等待和享受生活中的美好。"},
 ]
 
+
+
 const StartPage = ({ onStartClick }) => {
     const parameter = useSelector(state => state.result) ;
-
+    const imageName = `result_${parameter}.png`;
     return (
         <div className="background-with-overlay" style={{ 
             backgroundImage: `url(${background})`,
@@ -50,19 +52,22 @@ const StartPage = ({ onStartClick }) => {
                  <div className='row-span-1 flex flex-col justify-center items-center gap-2 pt-8 pb-2'>
                      <div className='w-full flex justify-center items-center font-bold text-base'>{result_context[parameter].title}</div> 
                  </div>
-                 <div className='result-with-overlay row-span-2 flex flex-col items-center justify-center gap-4 overflow-y-scroll'>
-                     <div className='text-sm h-2/3 divide-y-2 divide-amber-100'>
+                 <div className='h-full result-with-overlay row-span-2 flex flex-col items-center justify-center gap-4 '>
+                     <div className='text-sm divide-y-2 h-2/3 divide-amber-100'>
                          <div className=''> 茶種介紹 </div>
                          <div className='text-xs py-1 '>
                             {result_context[parameter].intro}
                          </div>
                      </div>
-                    <div className='text-sm h-1/3 divide-y-2 divide-amber-100'>
-                        <div className=''> 性格特徵 </div>
+                    <div className='text-sm divide-y-2 h-1/3 divide-amber-100'>
+                        <div className=''> 性格特質 </div>
                          <div className='text-xs py-1'>
                              {result_context[parameter].person}
                          </div>
                      </div>
+                        <div className='w-20 h-24 absolute right-4 bottom-4'>
+                            <img src={`results/result_${parameter}.png`} alt='I am B' />
+                        </div>
                  </div>
              </div>
             </div>

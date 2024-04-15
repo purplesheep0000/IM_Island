@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import background from "../asset/main_bg.jpg";
+import background from "../asset/main_bg.png";
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
@@ -196,11 +196,11 @@ const MainPage = ({ onStartClick }) => {
         <div className="background-with-overlay" style={{ 
             backgroundImage: `url(${background})`,
           }}>
-            <div className=" inner-content font-bold text-green-950 flex justify-center items-center">
-                <div className="mx-2 w-6/7 h-24 border-white rounded-lg p-4 divide-y-2 divide-amber-100 border-2 font-bold text-sm flex flex-col items-center justify-center">
+            <div className="with-overlay inner-content font-bold text-green-950 flex justify-center items-center">
+                <div className="z-10 mx-2 w-6/7 h-24 border-white rounded-lg p-4 divide-y-2 divide-amber-100 border-2 font-bold text-sm flex flex-col items-center justify-center">
                     {questions[currentQuestionIndex].question}
                 </div>
-                <div className='with-overlay mx-2 row-span-2 w-6/7 flex flex-col items-center justify-center'>
+                <div className=' mx-2 row-span-2 w-6/7 flex flex-col items-center justify-center'>
                 {questions[currentQuestionIndex].options.map((option, index) => (
                     <button key={index} className='z-10 border-white font-bold text-sm w-full h-1/6 my-2 rounded-lg border-2 py-4' onClick={() => handleOptionClick(index)}>{option}</button>
                 ))}

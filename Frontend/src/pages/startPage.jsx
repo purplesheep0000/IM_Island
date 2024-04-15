@@ -1,4 +1,4 @@
-import background from "../asset/start_bg.jpg";
+import background from "../asset/start_bg.png";
 import { useNavigate } from "react-router-dom";
 import React from 'react';
 
@@ -25,7 +25,7 @@ const StartPage = ({ onStartClick }) => {
             backgroundImage: `url(${background})`,
           }}>
             <div className="result-with-overlay inner-content font-bold text-green-950 flex justify-center items-center">
-                <div className="my-10 mx-2 w-6/7 h-54 border-white rounded-lg p-4 divide-y-2 divide-amber-100 border-2">
+                <div className="my-10 mx-2 w-6/7 h-54 border-white rounded-lg py-4 divide-y-2 divide-amber-100 border-2">
                     <span className="font-bold text-sm py-6">你今天找茶了嗎？</span>
                     <div className="text-xs py-2">
                         這個心理測驗不只可以讓你認識自己的性格特質，還可以找到自己適合哪種茶！<br/>
