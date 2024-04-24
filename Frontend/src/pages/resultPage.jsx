@@ -50,8 +50,7 @@ const result_context = {
 
 
 const StartPage = ({ onStartClick }) => {
-    // const parameter = useSelector(state => state.result) ;
-    const parameter = ['X', 'Y', "Z"]
+    const parameter = useSelector(state => state.result) ;
     const navigate = useNavigate();
     let result = parameter.join('')
 
