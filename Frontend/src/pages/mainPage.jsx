@@ -113,7 +113,6 @@ const questions = [
 const MainPage = ({ onStartClick }) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    var resu = 0;
     
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [personalityScores, setPersonalityScores] = useState({ R: 0, S: 0, T: 0 });

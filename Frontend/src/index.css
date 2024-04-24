@@ -45,9 +45,6 @@ code {
   width: 75%;
   height: 75%;
   z-index: 2; /* 确保内容在遮罩之上 */
-  display: grid;
-  grid-template-rows: 1fr 2fr;
-  gap: 16px;
 }
 
 .with-overlay::before {

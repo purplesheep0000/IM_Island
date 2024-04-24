@@ -50,7 +50,8 @@ const result_context = {
 
 
 const StartPage = ({ onStartClick }) => {
-    const parameter = useSelector(state => state.result) ;
+    // const parameter = useSelector(state => state.result) ;
+    const parameter = ['X', 'Y', "Z"]
     const navigate = useNavigate();
     let result = parameter.join('')
 
@@ -62,12 +63,11 @@ const StartPage = ({ onStartClick }) => {
         <div className="background-with-overlay flex flex-col" style={{ 
             backgroundImage: `url(${background})`,
           }}>
-            <div className="result-with-overlay inner-content font-bold text-green-950 flex justify-center items-center">
-                <div className='w-6/7 h-full grid grid-row-3 grid-flow-row gap-2 px-4'>
-                        <div className='row-span-1 flex flex-col justify-center items-center gap-1 pt-8'>
+            <div className="result-with-overlay gap-2 px-4 inner-content font-bold text-green-950 flex justify-center items-center flex-col">
+                        <div className='h-1/5 row-span-1 flex flex-col justify-center items-center gap-1 pt-8'>
                             <div className='w-full flex justify-center items-center font-bold text-base'>{result_context[result].title}</div> 
                         </div>
-                        <div className='h-52 row-span-2 flex items-center justify-center gap-4'>
+                        <div className='h-2/5 row-span-2 flex items-center justify-center gap-4'>
                             <div className='w-1/2 h-full'>
                                 <img className="w-full h-full" src={`results/${result}.png`} alt='result'/>
                             </div>
@@ -77,16 +77,15 @@ const StartPage = ({ onStartClick }) => {
                                     {result_context[result].person}
                                 </div>
                             </div>
-                            </div>
-                            <div className='w-full divide-y-2 divide-amber-100 '>
+                        </div>
+                        <div className='h-2/5 w-full row-span-2 divide-y-2 divide-amber-100 '>
                             <div className='text-sm divide-y-2 divide-amber-100'>
                                 <div className='text-base'> 茶種介紹 </div>
                                     <div className='text-xs py-1 '>
                                         {result_context[result].intro}
                                     </div>
-                                </div>                 
-                            </div>
-                </div>
+                            </div>                 
+                        </div>
             </div>
             <div className='divide-y-2 divide-amber-100 text-green-950 z-10 font-bold pt-2 opacity-75'>
                     <button onClick={() => replay()}>再測一次！</button>
