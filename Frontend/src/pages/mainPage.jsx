@@ -160,35 +160,12 @@ const MainPage = ({ onStartClick }) => {
         if (currentQuestionIndex === questions.length - 1){
                 // 计算总分
                 const { R, S, T } = personalityScores;
-    
-                switch (true) {
-                    case R > 7 && S > 7 && T > 3:
-                        resu = 7;
-                        break;
-                    case R > 7 && S > 7 && T < 4:
-                        resu = 3;
-                        break;
-                    case R > 7 && S < 9 && T > 3:
-                        resu = 2;
-                        break;
-                    case R > 7 && S < 9 && T < 4:
-                        resu = 1;
-                        break;   
-                    case R < 9 && S > 7 && T > 3:
-                        resu = 4;
-                        break;     
-                    case R < 9 && S > 7 && T < 4:
-                        resu = 8;
-                        break;     
-                    case R < 9 && S < 9 && T > 3:
-                        resu = 5;
-                        break; 
-                    default:
-                        resu = 6;
-                        break;
-                    }
-                    dispatch({ type: 'SET_PARAMETER', payload: resu-1 });
-                    navigate("/result");
+                let result = ['R', 'S', 'T']
+                if (R <= 7) result[0] = 'X'
+                if (S <= 7) result[1] = 'Y'
+                if (T <= 2) result[2] = 'Z' 
+                dispatch({ type: 'SET_PARAMETER', payload: result });
+                navigate("/result");
         }
     };
 
